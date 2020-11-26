@@ -14,6 +14,7 @@
 #banner {
   position: relative;
 }
+#opening { background: url('../images/bg01.jpg') no-repeat center top / cover; }
 
 
 .container {
@@ -382,12 +383,146 @@
   box-sizing: border-box;
 }
 
+/* Event */
+#event {
+  position: relative;
+  /* padding: 0 0 10rem 0; */
+}
+#event::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 500px;
+  background: #503396;
+}
+.event {
+  position: relative;
+}
+.event h2 { 
+  font-size: 3rem; 
+  margin-bottom: 2rem;
+}
+.event-banner-top { width: 100%; }
+.event-banner-bottom { display: flex; width: 100%; }
+.event-banner-bottom .big-banner { margin-right: 2rem; }
+.event-banner-bottom .big-banner a,
+.event-banner-bottom .sml-banner a,
+.event-banner-right a { box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2); }
+.event img,
+.event-banner-bottom a,
+.event-banner-right a { border-radius: 5px; }
+.event-banner-right a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.menu-wrap { padding: 7rem 0; }
+.menu-wrap ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-wrap li {
+  width: 20%;
+}
+.menu-wrap li.vip a { background: url('../images/vip_icon.png') no-repeat center 2px; }
+.menu-wrap li.mem a { background: url('../images/membership_icon.png') no-repeat center 2px; }
+.menu-wrap li.card a { background: url('../images/card_icon.png') no-repeat center 2px; }
+.menu-wrap li.eve a { background: url('../images/event_icon.png') no-repeat center 2px; }
+.menu-wrap li.store a { background: url('../images/store_icon.png') no-repeat center 2px; }
+.menu-wrap li a {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6rem 0 0;
+}
+.menu-wrap li a:hover { opacity: .8; }
+
+
+/* Opening */
+.opening {
+  padding: 10rem 0;
+  text-align: center;
+  color: #bb9b51;
+}
+
+.opening h2 .grand {
+  display: inline-block;
+  width: 330px;
+  height: 50px;
+  background-position: 0 -175px;
+}
+.opening .date {
+  background-position: 0 -225px;
+  display: inline-block;
+  width: 260px;
+  height: 45px;
+}
+.opening .desc {
+  font-size: 3.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 2rem;
+  background: url('../images/bar.png') no-repeat bottom center / 100%; 
+}
+.opening .open-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3% 0 3%;
+}
+.opening .open-box > div {
+  width: 27.333%;
+  margin: 4% 3% 0 3%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #3e4b44;
+  box-sizing: border-box;
+}
+.opening .open-box > div h3 {
+  display: inline-block;
+  font-size: 1.9rem;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  margin-top: -2.4rem;
+  background: #551e9b;
+  border: 1px solid #6e3abb;
+}
+.opening .open-box > div p {
+  font-size: 2.7rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #fff;
+  padding: 6% 0 10% 0;
+}
+.opening .open-box > div em { display: block;}
+.opening .open-box > div strong {
+  display: block;
+  font-weight: 700;
+}
+
+
+
 /* 반응형 */
 @media screen and (max-width: 1290px){
   .swiper-button-next, .swiper-button-prev,
   .swiper-button-next, .swiper-button-next { display: none;}
   .slider .banner-slide h2 { padding-left: 20px; }
   .slider .banner-slide p { padding-left: 20px; }
+
+  .event-banner-right a img { width: 415px; }
+  .event-banner-bottom .big-banner img { width: 440px; }
+  .event-banner-bottom .sml-banner img {  width: 204px; }
+  .menu-wrap { padding: 7rem 0; }
+  .menu-wrap ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 }
 
@@ -410,6 +545,13 @@
     padding: 2rem 3rem;
   }
 
+  .event { width: 100%; }
+  .event-banner-top { margin-bottom: 2rem; }
+  .event-banner-top,
+  .event-banner-bottom { display: flex; justify-content: center;}
+  /* .event-banner-bottom .big-banner img { width: 100%; } */
+  /* .event-banner-bottom .sml-banner img {  width: 100%; } */
+  .event-banner-right { display: none; }
 }
 
 @media screen and (max-width: 960px){
@@ -422,6 +564,10 @@
   .movie-chart .chart-slide .poster {
     width: 100%;
     max-width: 292px ;
+  }
+
+  .opening .open-box {
+    display: none;
   }
 }
 
@@ -542,11 +688,24 @@
     padding: 0;
   }
   .movie-tit li.active a { background: none; color: #666; }
+
+  #event .container { padding: 2.4rem; }
+  .event h2 { 
+    font-size: 2.4rem; 
+    font-weight: 700;
+    margin-top: 2rem;
+  }
+  .event-banner-top a { width: 500px; }
+  .event-banner-top,
+  .event-banner-bottom { justify-content: start; }
+  .event-banner-top img { width: 100%; }
+  .event-banner-bottom .big-banner a img,
+  .event-banner-bottom .sml-banner a img { width: 100%; }
 }
 
 @media screen and (max-width: 480px) {
   #movie { margin: .8rem; }
-  #movie .container { padding: 1.6rem; }
+  #movie .container { padding: 1.6rem; padding-right: 0; }
   #movie .ir-so { font-size: 2rem; }
   .movie-tit li a { font-size: 1.5rem; }
   .movie-tit li { margin-right: 2rem; }
@@ -566,4 +725,52 @@
   }
   .movie-chart .chart-slide .info .info-btn a:last-child { display: none; }
 
+  #event { margin: .8rem; }
+  #event::before { top: 300px; }
+  #event .container { padding: 0; }
+  .event {
+    padding: 1.6rem;
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  .menu-wrap { margin: 0 1rem; padding: 3rem 0;}
+  /* .menu-wrap ul { flex-wrap: wrap; } */
+  /* .menu-wrap li { margin-right: 2rem;} */
+  /* .menu-wrap li:last-child { margin-right: 0; } */
+  .menu-wrap li a {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 6rem 0 0;
+  }
+  .menu-wrap li.vip a,
+  .menu-wrap li.mem a,
+  .menu-wrap li.card a,
+  .menu-wrap li.eve a,
+  .menu-wrap li.store a { background-position: center center; }
+  
+  .menu-wrap li.vip a,
+  .menu-wrap li.card a,
+  .menu-wrap li.eve a,
+  .menu-wrap li.store a { background-size: 30px; }
+  .menu-wrap li.mem a { background-size: 25px; }
+
+  .opening { padding: 3rem 0; }
+  .opening h2 .grand {
+    background-size: 200px;
+    background-position: 0 -70px;
+    width: 131px;
+    height: 16px;
+    margin-bottom: 1rem;
+  }
+  .opening .date { display: none; }
+  .opening .desc {
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 0% 12% 0% 12%;
+    background-size: 0px;
+  }
 }
