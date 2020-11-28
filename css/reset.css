@@ -59,6 +59,57 @@ input, textarea, button { -webkit-appearance: none; -webkit-border-radius:0; fon
   clear: both;
 }
 
+/* input style */
+input {background-image: none;}
+input[type=button],
+input[type=reset],
+input[type=text],
+input[type=password],
+input[type=submit],
+input[type=search],
+input[type=tel],
+input[type=email] {
+    -webkit-appearance: none;
+    border-radius: 0
+}
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+input:checked[type=checkbox] {
+    background-color: #666;
+    -webkit-appearance: checkbox
+}
+
+/* select menu main style */
+.ui-select1,
+.ui-select2,
+.ui-input3 {
+	width: 100%;
+	height: 36px;
+	color: #fff;
+	background: #2c2f2c;
+	padding: 0 1rem;
+	border: 0;
+	box-sizing: border-box;
+}
+.ui-select1,
+.ui-select2 {
+	display: inline-block;
+	font-family: inherit;
+	font-size: inherit;
+	vertical-align: middle;
+	text-align: left;
+	white-space: nowrap;
+	padding: 0 1rem;
+	margin: 0;
+	background: #2c2f2c url('../images/down.svg') no-repeat right 10px center / 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+}
+
+
 /* IR 효과 */
 .ir-pm {display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;} /* 의미있는 이미지의 대체 텍스트를 제공하는 경우(Phark Method) */
 .ir-wa {display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%;} /* 의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때(WA IR) */
