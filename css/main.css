@@ -1060,6 +1060,7 @@
 }
 
 @media screen and (max-width: 480px) {
+  #header .container { padding: 0 .8rem; }
   .container { padding: 0; }
   #movie,
   #new { margin: .8rem; }
@@ -1134,10 +1135,11 @@
     background-size: 0px;
   }
 
-  .new { padding: 1.6rem; }
+  .new { padding: 1.6rem; margin-top: .8rem; margin-bottom: 0; }
   .new .tit { font-size: 2rem; margin: 0; padding-bottom: 2rem; }
   .new-right .btn a { width: 48.8%; }
 
+  #help .container { padding: 0 .8rem .8rem .8rem; }
   .card ul li strong, .card ul li em { line-height: 1.2; }
   .service { margin-top: 0; border: 1px solid #d7d7d7; }
   .service li { 
@@ -1151,5 +1153,7 @@
     border-right: 0;
     border-bottom: 0;
   }
+  .help article.help-box2, 
+  .help article.help-box3 { margin-top: .8rem; }
 
 }
