@@ -18,9 +18,9 @@ var bannerSwiper = new Swiper('.banner-swiper-container', {
 var movieSwiper = new Swiper('.movie-swiper-container', {
   slidesPerView: 4,
   spaceBetween: 18,
-  // autoplay: {
-  //   delay: 5000,
-  // },
+  autoplay: {
+    delay: 5000,
+  },
   breakpoints: {
     // when window width is >= 300px
     300: {
@@ -66,3 +66,17 @@ movBtn.click(function(e) {
   movCon.css('display','none');
   movCon.eq(index).css('display','flex');
 });
+
+// notice tab menu
+var tabMenu = $('.notice');
+
+tabMenu.find('ul > li > ul').hide();
+tabMenu.find('li.active > ul').show();
+
+function tabList(e) {
+  e.preventDefault();
+  var target = $(this);
+  target.next().show().parent('li').addClass('active').siblings('li').removeClass('active').find('ul').hide();
+}
+
+tabMenu.find('ul > li > a').click(tabList).focus(tabList);
