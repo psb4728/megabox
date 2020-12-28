@@ -119,6 +119,7 @@
   padding: 1.8rem 1rem;
 }
 
+
 /* Banner */
 .banner-menu {
   position: absolute;
@@ -535,7 +536,7 @@
   position: relative;
   margin-right: 42.3rem;
   height: 500px;
-  background: #ccc url(../images/new01.jpg) no-repeat center center;
+  background: #ccc url(../images/new02.jpg) no-repeat center center;
   background-size: cover;
 }
 .play .play-btn {
@@ -874,6 +875,35 @@
 }
 
 
+/* Trailer */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .92);
+  z-index: 1000;
+}
+.modal { position: absolute; }
+.modal-close {
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  background: url(../images/close.svg) no-repeat;
+  background-size: 32px 32px;
+  color: transparent;
+  text-indent: 100%;
+  border: 0;
+  overflow: hidden;
+}
+body.modal-on { overflow: hidden; }
+
+
 /* 반응형 */
 @media screen and (max-width: 1290px){
   .swiper-button-next, .swiper-button-prev,
@@ -898,10 +928,41 @@
   .container { padding: 0 2.4rem; }
   .header .logo { margin: 0 auto; }
   .header .logo strong { left: 24px; }
-  .header .nav { display: none; }
+  .header .nav { 
+    position: fixed;
+    top: 50px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    z-index: 100;
+    transition: all .4s;
+  }
+  .header .nav.active { 
+    display: block;
+    right: 0; 
+  }
+  .header .nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #c6c6c6;
+  }
+  .header .nav ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #c6c6c6;
+    box-sizing: border-box;
+  }
+  .header .nav ul li a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1.8rem 1rem;
+  }
+
 
   .banner-menu .bm-left ul { display: none; }
-  .banner-menu .bm-right ul:first-child { display: none; }
+  .banner-menu .bm-right ul:first-child { display: none; } 
   .banner-menu .bm-right ul:nth-child(2) {
     position: absolute;
     bottom: -390px;
@@ -986,6 +1047,7 @@
   .container { padding: 0 1.6rem; }
   .header .logo { margin-left: 0; }
   .header .logo strong { display: none; }
+
   .banner-menu .bm-right ul:nth-child(2) {
     position: absolute;
     left: 35px;
