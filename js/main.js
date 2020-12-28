@@ -1,3 +1,5 @@
+(function($){
+
 var bannerSwiper = new Swiper('.banner-swiper-container', {
   autoplay: {
     delay: 5000,
@@ -80,3 +82,13 @@ function tabList(e) {
 }
 
 tabMenu.find('ul > li > a').click(tabList).focus(tabList);
+
+})(jQuery);
+
+var nav = document.querySelector('.nav');
+var menuIcon = document.querySelector('.toggle-btn');
+
+menuIcon.addEventListener('click', function() {
+  var nav = document.querySelector('.nav');
+  nav.classList.toggle('active');
+});
