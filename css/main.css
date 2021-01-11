@@ -15,8 +15,6 @@
   position: relative;
 }
 #opening { background: url('../images/bg01.jpg') no-repeat center top / cover; }
-#new {}
-#help {}
 #footer { background: #211f1f; }
 
 /* text */
@@ -487,6 +485,7 @@
 .opening .desc {
   font-size: 3.5rem;
   font-weight: 300;
+  line-height: 1.2;
   text-transform: uppercase;
   padding: 2rem;
   background: url('../images/bar.png') no-repeat bottom center / 100%; 
@@ -1174,6 +1173,7 @@ body.modal-on { overflow: hidden; }
   .event-banner-bottom .big-banner a img,
   .event-banner-bottom .sml-banner a img { width: 100%; }
 
+
   #new { margin: .8rem; }
   .new { 
     padding: 2.4rem;
@@ -1271,7 +1271,10 @@ body.modal-on { overflow: hidden; }
   .event h2 { font-size: 2rem; }
 
   .menu-wrap { margin: 0 1rem; padding: 3rem 0;}
+  .menu-wrap ul { flex-wrap: wrap; }
   .menu-wrap li { 
+    width: 33.3333%;
+    margin: 1rem auto;
     transform: translateY(-10%);
   }
   /* .menu-wrap li:last-child { margin-right: 0; } */
@@ -1316,9 +1319,13 @@ body.modal-on { overflow: hidden; }
   .new-right .btn a { width: 48.8%; }
 
   #help .container { padding: 0 .8rem .8rem .8rem; }
+
+  .card { padding: 0; }
   .card ul li strong, .card ul li em { line-height: 1.2; }
   .service { margin-top: 0; border: 1px solid #d7d7d7; }
   .service li { 
+    display: flex;
+    flex-wrap: wrap;
     width: 50%;
     height: 193px;
     border: 1px solid #d7d7d7; 
